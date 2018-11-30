@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>obj-sort</title>
+</head>
+<body>
+<pre>
+     //假设有一个数组对象，根据id从小到大排序
+        var list = [
+            { name: "zhangsan", min_price: "49353"},
+            { name: "bocai", min_price: "36927"},
+            { name: "qingyi", min_price: "7481"},
+            { name: "qingyi", min_price: "12707"},
+            { name: "qingyi", min_price: "5283"}
+        ];
+        //定义一个函数
+        function compare(property){
+         return function(obj1,obj2){
+             var value1 = obj1[property];
+             var value2 = obj2[property];
+             return value1 - value2;     // 升序
+         }
+        }
+        //使用方法
+        list.sort(compare("min_price"));
+        document.querySelector('#result').innerText = JSON.stringify(list, null, 4);
+</pre>
+<code>
+    <b>结果：</b>
+    <div id="result" style="white-space: pre-wrap;"></div>
+</code>
+    <script type="text/javascript">
+        //假设有一个数组对象，根据id从小到大排序
+        var list = [
+            { name: "zhangsan", min_price: "49353"},
+            { name: "bocai", min_price: "36927"},
+            { name: "qingyi", min_price: "7481"},
+            { name: "qingyi", min_price: "12707"},
+            { name: "qingyi", min_price: "5283"}
+        ];
+        //定义一个函数
+        function compare(property){
+         return function(obj1,obj2){
+             var value1 = obj1[property];
+             var value2 = obj2[property];
+             return value1 - value2;     // 升序
+         }
+        }
+        //使用方法
+        list.sort(compare("min_price"));
+        document.querySelector('#result').innerText = JSON.stringify(list, null, 4);
+    </script>
+</body>
+</html>
