@@ -15,11 +15,17 @@
             { name: "qingyi", min_price: "5283"}
         ];
         //定义一个函数
-        function compare(property){
+        function compare(property, dir){
+            //默认升序
+            dir = dir !== undefined? dir:0;
          return function(obj1,obj2){
              var value1 = obj1[property];
              var value2 = obj2[property];
-             return value1 - value2;     // 升序
+             if (dir) {
+                return value2 - value1;     // 降序
+             }else{
+                return value1 - value2;     // 升序
+             };
          }
         }
         //使用方法
@@ -40,11 +46,17 @@
             { name: "qingyi", min_price: "5283"}
         ];
         //定义一个函数
-        function compare(property){
+        function compare(property, dir){
+            //默认升序
+            dir = dir !== undefined? dir:0;
          return function(obj1,obj2){
              var value1 = obj1[property];
              var value2 = obj2[property];
-             return value1 - value2;     // 升序
+             if (dir) {
+                return value2 - value1;     // 降序
+             }else{
+                return value1 - value2;     // 升序
+             };
          }
         }
         //使用方法
